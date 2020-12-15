@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <style>
+    
+    ul.mylist, ol.mylist {
+    list-style: none;
+    margin: 0px;
+    padding: 4px;
+  
+    max-width: 250px;
+    width: 100%;
+}
+       ul.mylist li, ol.mylist li {
+    padding: 5px 3px 5px 5px;
+    margin-bottom: 7px; 
+    border-bottom: 1px solid #efefef;
+    font-size: 16px;
+}
+ul.mylist li:last-child,
+ol.mylist li:last-child {
+    border-bottom: 0px; 
+}
+ul.mylist li:before,
+ol.mylist li:before {
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 9px 6px 0px;
+}
+
+.container{
+   float: left;
+  position: relative;
+  left:150px;
+  top:170px;
+}
+h4{
+  word-break: keep-all;
+  font-family: sans-serif;
+  color: inherit !important; font-size: 20px;
+  line-height: inherit !important;
+  margin: 0px !important;
+  padding: 0px !important; 
+}
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url({{ url_for('static', filename='airg.png') }})
+}
+    </style>
+</head>
+<div class="container">
+  <h4 id="title">
+     숙소 가격 예측 결과
+  </h3>
+  <br/>
+<ul class="mylist">
+  <li>지역: {{area}}</li>
+  <li>에어비엔비 형태: {{room}}</li>
+  <li>방 개수: {{roomnum}} </li>
+  <li>침대 개수: {{bednum}} </li>
+  <li>욕실 개수: {{bath}} </li>
+  
+</ul>
+  
+  <h2>예측 결과: {{gs}}</h2>
+  <br/>
+</div>
+</ul>
+</html>
